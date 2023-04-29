@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net6.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Selenium.WebDriver" />
+	<PackageReference Include="Serilog" />
+	<PackageReference Include="Serilog.AspNetCore" />
+	<PackageReference Include="Serilog.Enrichers.Thread" />
+	<PackageReference Include="Serilog.Sinks.Console" />
+	<PackageReference Include="Serilog.Sinks.File" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\DemoQA.Settings\DemoQA.Settings.csproj" />
+  </ItemGroup>
+
+</Project>
