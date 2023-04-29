@@ -1,6 +1,7 @@
 ﻿using DemoQA.Core.Drivers.Implementations;
 using DemoQA.Core.Logging;
 using DemoQA.Core.Managers.WebDriverUtils;
+using DemoQA.Core.Managers.WebDriverUtils.Waiter;
 using DemoQA.Settings.Utils;
 using OpenQA.Selenium;
 using static DemoQA.Settings.SettingsConfigurator;
@@ -57,5 +58,7 @@ namespace DemoQA.Core.Managers
         public static WebDriverNavigation Navigation => new(WebDriver);
 
         public static WebDriverActions Actions => new(WebDriver);
+
+        public static BaseWaiter Wait => new Waiter(WebDriver).Wait();
     }
 }

@@ -1,13 +1,15 @@
 ﻿using DemoQA.Core.Logging;
+using DemoQA.Core.Utils;
 using DemoQA.Pages.PageElements;
 using DemoQA.Settings.Utils;
+using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
 namespace DemoQA.Pages.ElementsSectionPages
 {
     public class UploadAndDownloadPage : BasePage
     {
-        private const string UploadedFileOutputLocator = "p#uploadedFilePath";
+        private const string UploadedFileLocator = "p#uploadedFilePath";
 
         [FindsBy(How.XPath, "//a[@id='downloadButton' and normalize-space()='Download']")]
         private ButtonElement DownloadButton { get; set; }
@@ -15,7 +17,7 @@ namespace DemoQA.Pages.ElementsSectionPages
         [FindsBy(How.XPath, "//input[@id='uploadFile']")]
         private ButtonElement UploadButton { get; set; }
 
-        [FindsBy(How.CssSelector, UploadedFileOutputLocator)]
+        [FindsBy(How.CssSelector, UploadedFileLocator)]
         private TextFieldElement UploadedFilePath { get; set; }
 
         public string DownloadFile()
@@ -25,8 +27,7 @@ namespace DemoQA.Pages.ElementsSectionPages
 
             Logger.LogInfo("Start {0} file downloading", fileName);
 
-            // TODO: Implement waiter
-            // Waiter.Wait().UntilCondition(driver => FileUtils.Exists(pathToFile));
+            Wait.UntilCondition(driver => FileUtils.Exists(pathToFile));
 
             Logger.LogInfo("File {0} was downloaded", fileName);
 
@@ -45,9 +46,9 @@ namespace DemoQA.Pages.ElementsSectionPages
         public string GetUploadedFileOutputPath()
         {
             Logger.LogInfo("Try to get uploaded file path");
+            var uploadedFile = By.CssSelector(UploadedFileLocator);
 
-            // TODO: Implement waiter
-            // Waiter.Wait().ForElement(UploadedFileOutputLocator).UntilAppeared();
+            Wait.ForElement(uploadedFile).UntilAppeared();
 
             return UploadedFilePath.GetText();
         }
