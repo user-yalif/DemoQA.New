@@ -13,10 +13,6 @@ namespace DemoQA.Core.Managers
 
         private static string PathToDriver => PathUtils.ConfigureBaseDirectoryPath("");
 
-        private static string PathToDownloads => PathUtils.ConfigureBaseDirectoryPath(AppSettings.Paths.DownloadsDirectory);
-
-
-
         protected static IWebDriver WebDriver
         {
             get
@@ -44,6 +40,8 @@ namespace DemoQA.Core.Managers
             }
         }
 
+        public static string PathToDownloads => PathUtils.ConfigureBaseDirectoryPath(AppSettings.Paths.DownloadsDirectory);
+
         public static void ReleaseDriver()
         {
             if (ThreadDriver?.Value is not null)
@@ -58,6 +56,6 @@ namespace DemoQA.Core.Managers
 
         public static WebDriverNavigation Navigation => new(WebDriver);
 
-        public static WebDriverAction Action => new(WebDriver);
+        public static WebDriverActions Actions => new(WebDriver);
     }
 }

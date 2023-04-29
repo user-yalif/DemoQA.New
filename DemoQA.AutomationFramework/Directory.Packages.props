@@ -15,5 +15,8 @@
 	<PackageVersion Include="NUnit" Version="[3.13.3]" />
 	<PackageVersion Include="NUnit3TestAdapter" Version="[4.4.2]" />
 	<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="[17.5.0]" />
+	<PackageVersion Include="DotNetSeleniumExtras.PageObjects.Core" Version="[4.3.0]" />
+	<PackageVersion Include="DotNetSeleniumExtras.PageObjects.Core.Linq" Version="[1.0.0]" />
+	<PackageVersion Include="DotNetSeleniumExtras.WaitHelpers" Version="[3.11.0]" />
   </ItemGroup>
 </Project>

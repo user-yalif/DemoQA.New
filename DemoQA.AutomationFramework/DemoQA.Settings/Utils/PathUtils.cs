@@ -23,5 +23,7 @@
 
             return Combine(path.ToArray());
         }
+
+        public static string GetFileName(string pathToFile) => Path.GetFileName(pathToFile);
     }
 }
