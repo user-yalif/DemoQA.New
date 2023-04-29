@@ -16,6 +16,8 @@ namespace DemoQA.Tests
 
         private static string PathToScreenshots => PathUtils.ConfigureBaseDirectoryPath(AppSettings.Paths.ScreenshotsOutput);
 
+        protected static string PathToDownloads => WebDriverManager.PathToDownloads;
+
         [SetUp]
         public void SetUpTest()
         {
@@ -35,7 +37,9 @@ namespace DemoQA.Tests
                 if (TestStatus == TestStatus.Failed)
                 {
                     DirectoryUtils.CreateIfNotExist(PathToScreenshots);
-                    var screenshotName = WebDriverManager.Action.TakeScreenshot(PathToScreenshots, TestName);
+                    var screenshotName = WebDriverManager.Actions.TakeScreenshot(PathToScreenshots, TestName);
+                    TestContext.AddTestAttachment(screenshotName, "Screenshot");
+
                     Logger.LogInfo($"Screenshot taken {screenshotName}");
                 }
             }

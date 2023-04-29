@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DemoQA.Core\DemoQA.Core.csproj" />
+    <ProjectReference Include="..\DemoQA.Pages\DemoQA.Pages.csproj" />
   </ItemGroup>
 	
 </Project>
