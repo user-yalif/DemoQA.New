@@ -20,8 +20,9 @@ namespace DemoQA.Tests
         public void SetUpTest()
         {
             Logger.LogInfo("{0} test started", TestName);
-            Logger.LogInfo("Navigate to {0}", AppSettings.BaseUrl);
             WebDriverManager.Navigation.GoToUrl(AppSettings.BaseUrl);
+
+            Logger.LogInfo("Navigate to {0}", AppSettings.BaseUrl);
         }
 
         [TearDown]
@@ -31,7 +32,7 @@ namespace DemoQA.Tests
 
             try
             {
-                if (TestStatus == TestStatus.Failed)
+                if (TestStatus != TestStatus.Failed)
                 {
                     DirectoryUtils.CreateIfNotExist(PathToScreenshots);
                     var screenshotName = WebDriverManager.Action.TakeScreenshot(PathToScreenshots, TestName);
