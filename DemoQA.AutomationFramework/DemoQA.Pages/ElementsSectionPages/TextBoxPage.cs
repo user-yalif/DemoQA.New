@@ -35,6 +35,7 @@ namespace DemoQA.Pages.ElementsSectionPages
         private TextBoxPage InputFullName(string fullName)
         {
             FullNameInput.ClearAndInput(fullName, true);
+
             return this;
         }
 
