@@ -20,8 +20,9 @@ namespace DemoQA.Tests
         public void SetUpTest()
         {
             Logger.LogInfo("{0} test started", TestName);
-            Logger.LogInfo("Navigate to {0}", AppSettings.BaseUrl);
             WebDriverManager.Navigation.GoToUrl(AppSettings.BaseUrl);
+
+            Logger.LogInfo("Navigate to {0}", AppSettings.BaseUrl);
         }
 
         [TearDown]
