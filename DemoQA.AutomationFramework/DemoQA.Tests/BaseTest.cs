@@ -32,7 +32,7 @@ namespace DemoQA.Tests
 
             try
             {
-                if (TestStatus != TestStatus.Failed)
+                if (TestStatus == TestStatus.Failed)
                 {
                     DirectoryUtils.CreateIfNotExist(PathToScreenshots);
                     var screenshotName = WebDriverManager.Action.TakeScreenshot(PathToScreenshots, TestName);
