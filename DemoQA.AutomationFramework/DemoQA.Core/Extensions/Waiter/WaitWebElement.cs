@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace DemoQA.Core.Managers.WebDriverUtils.Waiter
+namespace DemoQA.Core.Extensions.Waiter
 {
     public class WaitWebElement
     {
