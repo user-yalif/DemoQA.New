@@ -1,6 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using DemoQA.Core.Extensions;
+using OpenQA.Selenium;
 
-namespace DemoQA.Core.Managers.WebDriverUtils
+namespace DemoQA.Core.Utils.WebDriverUtils
 {
     public class WebDriverNavigation
     {
@@ -8,6 +9,6 @@ namespace DemoQA.Core.Managers.WebDriverUtils
 
         public WebDriverNavigation(IWebDriver webDriver) => _webDriver = webDriver;
 
-        public void GoToUrl(string url) => _webDriver.Navigate().GoToUrl(url);
+        public void GoToUrl(string url) => _webDriver.GoToUrl(url);
     }
 }
